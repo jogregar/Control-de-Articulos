@@ -7,8 +7,6 @@ Esta es una pequeña aplicación web para controlar el inventario de artículos.
 - Conectarse con una base de datos MySQL.
 - Agregar, consultar, modificar y eliminar artículos.
 - Agregar, consultar, modificar y eliminar categorías.
-- Agregar, consultar, modificar y eliminar transacciones.
-- Agregar, consultar, modificar y eliminar tipos de transacciones.
 
 ## Requisitos Previos
 
