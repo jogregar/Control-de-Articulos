@@ -1,0 +1,35 @@
+{% extends 'layouts/nav.html' %}
+
+{% block contenido %}
+    <div class="container">
+        <h2 class="text-center">
+            {% if categoria.id != 0 %}
+                {{ "Modificar Categoria" }}
+            {% else %}
+                {{ "Nueva Categoria" }}
+            {% endif %}
+        </h2>
+        <div class="col-4 mx-auto border border-1 rounded-2 border-secondary-subtle p-3 bg-info-subtle">
+            <form method="POST" action="/crearcategoria/">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="hidden" value="{{categoria.id}}" id="id" name="id">
+                </div>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">
+                        Nombre Categoria
+                    </label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="{{categoria.nom_categoria}}" required>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary guardar">Guardar</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-danger" onclick="window.location.href='/categorias/';">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'layouts/nav.html' %}
+
+{% block contenido %}
+    <div class="container">
+        <h2 class="text-center">
+            {% if art.id != 0 %}
+                {{ "Modificar Articulo" }}
+            {% else %}
+                {{ "Nuevo Articulo" }}
+            {% endif %}
+        </h2>
+        <div class="col-4 mx-auto border border-1 rounded-2 border-secondary-subtle p-3 bg-info-subtle">
+            <form method="POST" action="/creararticulo/">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="hidden" value="{{art.id}}" id="id" name="id">
+                </div>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">
+                        Nombre Articulo
+                    </label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="{{art.nom_articulo}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">
+                        Descripción Articulo
+                    </label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" value="{{art.des_articulo}}" required>
+                </div>
+                <div class="row g-1">
+                    <div class="col-auto">
+                        <label for="cantidad" class="form-label">
+                            Cantidad
+                        </label>
+                        <input type="number" class="form-control" id="cantidad" name="cantidad" value="{{art.can_articulo}}" required>
+                    </div>
+                    <div class="col-auto">
+                        <label for="precio" class="form-label">
+                            Precio  
+                        </label>
+                        <input type="text" class="form-control" id="precio" name="precio" value="{{art.pre_articulo}}" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="categoria" class="form-label">
+                        Categoria  
+                    </label>
+                    <select class="form-select" id="categoria" name="opciones" required>
+                        {% for categoria in categorias %}
+                            <option value="{{categoria.id}}" {% if art.cat_articulo_id == categoria.id %} selected{% endif %}>{{categoria.nom_categoria}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary guardar">Guardar</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-danger" onclick="window.location.href='/articulos/';">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+body {
+    background-color: aquamarine;
+}
+
+.color-fondo {
+    background-color: #e3f2fd;
+}
+
+.color-texto-menu:hover {
+    background-color: blue;
+    color: white;
+}

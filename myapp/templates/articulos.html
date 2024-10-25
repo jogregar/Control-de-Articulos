@@ -1,0 +1,52 @@
+{% extends 'layouts/nav.html' %}
+
+{% block contenido %}
+    <!-- <script>
+        function eliminar(id) {
+            Swal.fire({
+            title: "Estas Seguro?",
+            text: "Esta acción no se puede deshacer",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Si, Eliminar",
+            cancelButtonText: "No, Cancelar"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              location.href = "/eliminararticulo/"+id
+            }
+        });
+        };
+    </script> -->
+    {% load custom_filters %}
+    <div class="container">
+        <div class="text-end mb-2">
+            <a href="/adminarticulos/0" class="btn btn-primary" title="Nuevo"><i class="fa-solid fa-file"></i></a>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th>Id Articulo</th>
+                    <th>Nombre del Articulo</th>
+                    <th>Descripción del Articulo</th>
+                    <th>Cantidad</th>
+                    <th>Precio del Articulo</th>
+                    <th>Acción</th>
+                </tr>    
+            </thead>
+            {% for articulo in articulos %}
+                <tr>
+                    <td class="text-center">{{articulo.id}}</td>
+                    <td>{{articulo.nom_articulo}}</td>
+                    <td>{{articulo.des_articulo}}</td>
+                    <td class="text-center">{{articulo.can_articulo}}</td>
+                    <td class="text-end">{{articulo.pre_articulo|custom_floatformat}}</td>
+                    <td class="text-center"><a href="/adminarticulos/{{articulo.id}}" class="btn btn-secondary" title="Editar"><i class="fa-solid fa-pen-to-square"></i></a> <a href="/eliminararticulo/{{articulo.id}}" class="btn btn-danger btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+
+<!-- onclick="eliminar('/eliminararticulo/'+{{articulo.id}})" -->

@@ -1,0 +1,45 @@
+{% extends 'layouts/nav.html' %}
+
+{% block contenido %}
+    <!-- <script>
+        function eliminar(id) {
+            Swal.fire({
+            title: "Estas Seguro?",
+            text: "Esta acción no se puede deshacer",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Si, Eliminar",
+            cancelButtonText: "No, Cancelar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+            location.href = "/eliminarcategoria/"+id
+            }
+        });
+        };
+    </script> -->
+    <div class="container">
+        <div class="text-end mb-2">
+            <a href="/admincategorias/0" class="btn btn-primary" title="Nuevo"><i class="fa-solid fa-file"></i></a>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th>Id Categoria</th>
+                    <th>Nombre Categoria</th>
+                    <th>Acción</th>
+                </tr>    
+            </thead>
+            {% for categoria in categorias %}
+                <tr>
+                    <td class="text-center">{{categoria.id}}</td>
+                    <td>{{categoria.nom_categoria}}</td>
+                    <td class="text-center"><a href="/admincategorias/{{categoria.id}}" class="btn btn-secondary" title="Editar"><i class="fa-solid fa-pen-to-square"></i></a> <a href="/eliminarcategoria/{{categoria.id}}" class="btn btn-danger btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+
+<!-- onclick="eliminar('/eliminarcategoria/'+{{categoria.id}})" -->
