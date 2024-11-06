@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Pacifico');
+
+:root{
+	--color-pink: rgb(253, 124, 110,0.9);
+	box-sizing: border-box;
+}
+
+body{
+    background-color:  rgb(242, 236, 236);
+    background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center center;
+	
+}
+
+#title{
+	font-weight: 400;
+    line-height: 1.4;
+	text-align:center;
+	font-family: 'Raleway', sans-serif;
+	margin: 30px auto;
+	font-size: 5vw;
+	color: rgb(117, 10, 10);
+    font-family: Pacifico;
+
+	/*border:5px solid black;*/
+}
+
+#description{
+	font-weight: 300;
+  line-height: 1.5;
+	text-align:center;
+	font-family: 'Lobster', cursive;
+	font-size:3vw;
+	margin: 30px 30px 80px;
+	color: white;
+	/*border:5px solid black;*/
+}
+
+#survey-form{
+	background-color: var(--color-pink);
+	width:450px;
+	margin-left: auto;
+	margin-right: auto;	
+	padding:40px 20px ;	
+	margin-bottom:80px;
+	font-size: 1rem;
+	font-family: 'Raleway', sans-serif;
+	border-radius: 0.60rem;
+}
+
+.cuestionario{
+	margin: 0 40px;
+	color: #FFF9F0;
+	line-height:1.5;		
+}
+
+input[id="edad"] {
+	width: 350px;
+	margin-bottom: 10px;
+}
+input[id="email-label"] {
+	width: 350px;
+	margin-bottom: 10px;
+}
+input[id="name-label"]{
+	width: 350px;
+	margin-bottom: 10px;
+}
+
+#dropdown {
+	width: 354px;
+	height:23px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	
+}
+
+.cuestionario p{
+		margin-bottom: 5px;
+	}
+
+.set-personal{
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#experiencia {
+	margin-bottom: 40px;
+} 
+
+#formulario{
+	margin: 0 90px;
+	border-radius:5px; 
+	color:white;
+	background-color:#035aa6;
+	border: 1px solid black;
+  height:30px;
+	width:200px;
+	font-size:15px;
+	font-family: 'Raleway', sans-serif;
+}

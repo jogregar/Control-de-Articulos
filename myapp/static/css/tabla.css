@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Pacifico');
+
+h1 {
+  margin-top: 100px;
+  font-family: Pacifico;
+  color: rgb(110, 20, 65);
+  height: 10vh; /* Puedes ajustar esto si lo deseas */
+  font-size: 4em !important; /* Aumenta el tamaño de la fuente aquí */
+  font-weight: bold;
+}
+
+table { 
+  width: 100%;
+  background: white;
+  line-height: 1.3em;
+  display: table;
+}
+
+tr:nth-of-type(odd) { 
+  background: rgba(128, 128, 128, 0.5); /* Cambié a rgba para un color más claro */
+}
+
+td, th { 
+  padding: 6px; 
+  border: 1px solid rgba(128, 128, 128, 0.8); /* Cambié a rgba para un color más claro */
+  text-align: left; 
+}
+
+th { 
+  background: grey; 
+  color: white; /* Cambié el color del texto para mejor contraste */
+  font-weight: bold; 
+
+}
+
+body {
+  background-color: rgb(242, 236, 236);
+  text-align: center;
+}
+
+.table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+.table th, .table td {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  color: #333;
+  text-align: center; 
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tr:hover {
+  background-color: #d1e7dd;
+}
+
+.custom-btn {
+  padding: 5px 10px;
+  border: 2px solid #28a745;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #28a745;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 2px;
+}
+
+.custom-btn:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.custom-btn.btn-accion {
+  margin: 0 5px;
+  padding: 5px 15px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.custom-btn.eliminar-btn {
+  border-color: red;
+  color: red;
+}
+
+.custom-btn.eliminar-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+.frame {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.selected {
+  background-color: #d1e7dd !important;
+}
+
+.centrar {
+  text-align: center !important;
+}
+
+.derecha {
+  text-align: right !important;
+}
+
+a {
+  text-decoration: none;
+}

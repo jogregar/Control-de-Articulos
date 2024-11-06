@@ -1,0 +1,46 @@
+{% extends "layouts/menu.html" %}
+
+{% block contenido %}
+    {% if articulo.id == 0 %}
+        <h1>Agregar Artículo</h1>
+    {% else %}
+        <h1>Modificar Artículo</h1>
+    {% endif %}
+    <form id="survey-form" method="POST" action="/guardararticulo/"> 
+        {% csrf_token %}
+        <div class="cuestionario">
+            <input type="hidden" name="id" value="{{articulo.id}}">
+            <p>Nombre del Artículo:</p>
+            <label for="nombre-articulo"></label>
+            <input id="nombre-articulo" type="text" placeholder="Nombre del artículo..." required name="nom_articulo" value="{{articulo.nom_articulo}}">
+            
+            <p>Descripción:</p>
+            <label for="descripcion-articulo"></label>
+            <input id="descripcion-articulo" type="text" placeholder="Descripción..." required name="des_articulo" value="{{articulo.des_articulo}}">
+
+            <p>Cantidad:</p>
+            <label for="cantidad-articulo"></label>
+            <input id="cantidad-articulo" type="number" placeholder="Cantidad..." min="1" required name="can_articulo" value="{{articulo.can_articulo}}">
+
+            <p>Precio:</p>
+            <label for="precio-articulo"></label>
+            <input id="precio-articulo" type="text" placeholder="Precio..." required name="pre_articulo" value="{{articulo.pre_articulo|floatformat:0}}">
+
+            <p>Categoria:</p>
+            <label for="categoria"></label>
+            <select id="categoria" name="tip_categoria" required>
+                {% if articulo.id == 0 %}
+                    <option value="0" selected disabled>Seleccione una categoria</option>
+                {% endif %}
+                {% for categoria in categorias %}
+                    <option value="{{categoria.id}}" {% if articulo.tip_categoria_id == categoria.id %} selected{% endif %}>{{categoria.nom_categoria}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="set-personal" style="text-align: center;">
+            <button class="formulario" type="submit">Guardar</button>
+            <button class="formulario" id="cancelar2">Cancelar</button>
+        </div>
+    </form>
+{% endblock %}

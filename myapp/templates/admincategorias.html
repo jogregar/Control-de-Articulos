@@ -1,0 +1,20 @@
+{% extends "layouts/menu.html" %}
+
+{% block contenido %}
+    {% if categoria.id == 0 %}
+        <h1>Crear Categoria</h1>
+    {% else %}
+        <h1>Modificar Categoria</h1>
+    {% endif %}
+    <form action="/guardarcategoria/" method="POST" id="survey-form">
+        {% csrf_token %}
+        <input type="hidden" value="{{categoria.id}}" name="idcategoria">
+        <label for="">Categoria</label>
+        <input type="text" value="{{categoria.nom_categoria}}" name="nomcategoria" required id="nombre-articulo">
+        <div class="set-personal">
+            <button class="formulario" type="submit">Guardar</button>
+            <button class="formulario" id="cancelar1">Cancelar</button>
+        </div>
+    </form>
+{% endblock %}
+

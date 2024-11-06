@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Pacifico');
+
+
+
+.rating > span:hover:before {
+   content: "\2605";
+   position: absolute;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
+
+/*==================
+STORE NAV BAR
+=====*/
+
+.store-navbar{
+  width: 100%;
+  border-bottom: solid;
+  height: 15vh;
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  color: rgb(131, 23, 7);
+  background-color: rgb(242, 236, 236);
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.store-navbar span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  font-weight: bold;
+  font-family: pacifico;
+  color: #752f14;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-start;
+}
+
+.store-navbar span:hover{
+  -webkit-animation: rotate-color 10s;
+       -moz-animation: rotate-color 10s;
+        -ms-animation: rotate-color 10s;
+         -o-animation: rotate-color 10s;
+            animation: rotate-color 10s;
+}
+
+
+.store-navbar ul{
+  display:flex;
+  list-style-type: none;
+  margin-left: 5%;
+  margin-top: 5vh;
+}
+
+.store-navbar ul li{
+  text-decoration: none;
+  font-family: Pacifico;
+  /* margin-left: 20%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.3em;
+}
+
+.store-navbar ul li:hover{
+  cursor: pointer;
+  -webkit-animation: flicker 1.5s;
+       -moz-animation: flicker 1.5s;
+        -ms-animation: flicker 1.5s;
+         -o-animation: flicker 1.5s;
+            animation: flicker 1.5s;
+   animation-iteration-count: infinite;
+}
+
+.store-navbar span:hover{
+  cursor: pointer;
+}
+
+@keyframes flicker{
+   0% {
+     opacity:.5;
+  }
+   50% {
+   opacity:1;
+   background: -webkit-linear-gradient(#e52a6f,#675682);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+   100% {
+   opacity:1;
+   background: -webkit-linear-gradient(#e52a6f,#675682);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+}
+
+body{background-color:  rgb(242, 236, 236);}
+
+/* Eliminar el color azul y el subrayado de los enlaces */
+.store-navbar a {
+  color: inherit; /* Hereda el color del texto del elemento padre */
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+/* Agregar espacio entre enlaces */
+.store-navbar li {
+  margin-right: 20px; /* Agrega un espacio de 20px entre los enlaces */
+}
+
+/* Opcional: Ajustar el espacio para el último enlace */
+.store-navbar li:last-child {
+  margin-right: 0; /* Elimina el espacio para el último enlace */
+}
+
+/* Opcional: Estilo para los enlaces al pasar el mouse */
+.store-navbar a:hover {
+  color: #555; /* Cambia el color al pasar el mouse, puedes ajustar el color */
+}
+

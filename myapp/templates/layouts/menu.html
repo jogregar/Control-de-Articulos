@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Artículos</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tabla.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="store">
+        <div class="store-navbar">
+          <span>Control de Articulos</span>
+          <ul>
+            <li>
+              <a href="/"><li>Home</li></a>
+            </li>
+            <li>
+              <a href="/articulos/"><li>Articulos</li></a> 
+            </li>
+            <li>
+              <a href="/categorias/"><li>Categorias</li></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    {% block contenido %}
+    
+    {% endblock %}
+
+    <!---- Js Personales ---->
+    <script src="{% static 'js/utilitarios.js' %}"></script>
+    <!---- Sweetaler2 ---->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% if messages %}
+        {% for m in messages %}
+            <script>
+                Swal.fire({
+                    title: "{{m}}",
+                    text: "",
+                    icon: "success"
+                });
+            </script>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

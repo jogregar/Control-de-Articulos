@@ -1,0 +1,31 @@
+{% extends "layouts/menu.html" %}
+
+
+{% block contenido %}
+    <h1>Categorias</h1>
+    <div class="frame">
+        <a href="/admincategorias/0"><button class="custom-btn btn-1" id="newcategoria">Agregar</button></a>
+        <a href="/"><button class="custom-btn btn-1">Volver</button></a>
+    </div>
+    <table class="table" id="tablaArticulos">
+        <thead>
+            <tr>
+                <th>Id Categoria</th>
+                <th>Nombre de la Categoria</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        {% for categoria in categorias %}
+            <tr>
+                <td class="centrar">{{ categoria.id }}</td>
+                <td>{{ categoria.nom_categoria }}</td>
+                <td class="centrar">
+                    <a href="/admincategorias/{{categoria.id}}"><button class="custom-btn btn-accion modificar-btn">Modificar</button></a>
+                    <a href="/eliminarcategoria/{{categoria.id}}">
+                        <button class="custom-btn btn-accion eliminar-btn">Eliminar</button>    
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

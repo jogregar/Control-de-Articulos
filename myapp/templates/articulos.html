@@ -1,0 +1,40 @@
+{% extends "layouts/menu.html" %}
+{% block contenido %}
+    {% load custom_filters %}
+    <h1>Artículos</h1>
+    <div class="frame">
+        <a href="/adminarticulos/0"><button class="custom-btn btn-1" id="agregarBtn">Agregar</button></a>
+        <a href="/"><button class="custom-btn btn-1">Volver</button></a>
+    </div>
+    <table class="table" id="tablaArticulos">
+        <thead>
+            <tr>
+                <th>Id Articulo</th>
+                <th>Nombre del Articulo</th>
+                <th>Descripción del Articulo</th>
+                <th>Cantidad</th>
+                <th>Precio del Articulo</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for articulo in articulos %}
+                <tr>
+                    <td class="centrar">{{ articulo.id }}</td>
+                    <td>{{ articulo.nom_articulo }}</td>
+                    <td>{{articulo.des_articulo}}</td>
+                    <td class="centrar">{{articulo.can_articulo}}</td>
+                    <td class="derecha">{{articulo.pre_articulo|custom_floatformat}}</td>
+                    <td class="centrar">
+                        <a href="/adminarticulos/{{articulo.id}}">
+                            <button class="custom-btn btn-accion modificar-btn">Modificar</button>
+                        </a>
+                        <a href="/eliminararticulo/{{articulo.id}}">
+                            <button class="custom-btn btn-accion eliminar-btn">Eliminar</button>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
