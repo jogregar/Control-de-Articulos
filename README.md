@@ -74,10 +74,6 @@ Inicie la aplicación:
 ```bash
 py manage.py runserver
 ```
-o
-```bash
-python3 app.py
-```
 
 La aplicación estará disponible en http://127.0.0.1:8000/ o http://localhost:8000. Abra cualquiera de estos enlaces en su navegador web.
 
