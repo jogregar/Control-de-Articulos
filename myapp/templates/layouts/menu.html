@@ -41,7 +41,10 @@
                 Swal.fire({
                     title: "{{m}}",
                     text: "",
-                    icon: "success"
+                    icon: "success",
+                    customClass: {
+                      confirmButton: 'btn-cancelar' // Nombre de la clase personalizada
+                    }
                 });
             </script>
         {% endfor %}

@@ -32,9 +32,12 @@ if (document.querySelectorAll('.eliminar-btn')) {
                 imageWidth: 400,
                 imageHeight: 200,
                 showCancelButton: true,
-                confirmButtonColor: "#d33",
-                cancelButtonColor: "#3085d6",
-                confirmButtonText: "Eliminar"
+                confirmButtonText: "Eliminar",
+                cancelButtonText: "Cancelar",
+                customClass: {
+                    confirmButton: 'btn-confirmar',
+                    cancelButton: 'btn-cancelar'
+                  }
             }).then((result) => {
                 if (result.isConfirmed) {
                     location.href = enlace.getAttribute('href');

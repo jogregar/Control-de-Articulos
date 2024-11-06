@@ -119,3 +119,34 @@ body {
 a {
   text-decoration: none;
 }
+
+.btn-confirmar {
+  border: 2px solid #ff0000;
+  color: #ff0000;
+  background-color: #ffffff;
+  border-radius: 5px
+}
+
+.btn-confirmar:hover {
+  background-color: #ff0000;
+  color: #ffffff;
+  transition: background-color 0.3s ease; 
+}
+
+.btn-cancelar {
+  border: 2px solid #28a745;
+  color: #28a745; 
+  background-color: #ffffff;
+  border-radius: 5px
+}
+
+.btn-cancelar:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-cancelar:hover {
+  background-color: #28a745;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
