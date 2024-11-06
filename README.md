@@ -56,20 +56,7 @@ Con el entorno virtual activado, instale las dependencias del proyecto:
 pip install -r requirements.txt
 ``` 
 
-### 4. Instalar MySQL
-
-Puede descargaqr MySQL desde su sitio web oficial o bien utilizar algun servidor apache como xamp, laragon, etc. Despues de descargar e instalar MySQL debe ejecutar sus servicios, esto dependera de la aplicación seleccionada para utilizar.
-
-### 5. Crear base de datos y tablas
-
-El archivo respaldo_inventerio.sql contiene un respado de la base de datos, el mismo creara la base de datos junto con las tablas necesarias.
-
-Para este paso se debe estar ejecutando los servicios de MySQL. Proceda a ejecutar el siguiente comando desde la consola.
-```bash
-mysql -u root -p < respaldo_inventario.sql
-```
-
-### 6. Ejecutar la Aplicación
+### 4. Ejecutar la Aplicación
 Inicie la aplicación:
 ```bash
 py manage.py runserver
